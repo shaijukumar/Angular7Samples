@@ -1,0 +1,26 @@
+
+  
+
+<div (click)="onDivClicked()">
+
+
+  <button (click)="onSave($event)" >Save</button>
+
+  <button class="btn btn-primary"    [class.active]="isActive" [style.backgroundColor]=" isActive ? 'blue' : 'red' " >Save</button>
+
+  <input (keyup.enter)="onKeyUp($event)">
+
+  <input #email (keyup.enter)="onKeyUp1(email.value)">
+
+  <input [(ngModel)]="Title" (keyup.enter)="onKeyUp4()">
+
+  <br/>  <br/>
+  Title : {{Title | uppercase | lowercase}}
+  <br>Salary  : {{Salary | number}}
+  <br>Rating  : {{1.1234 | number:'3.2-2'}}
+  <br>price  : {{price | currency:'INR':false:'3.2-2'}}
+  <br/>DOB : {{DOB | date:'shortDate'}}
+  <br/>Summary : {{Summary | summary:10:'***'}}
+
+</div>
+
