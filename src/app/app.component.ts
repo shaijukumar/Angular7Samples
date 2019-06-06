@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import {FavouriteChangedEventArgs} from './favourate/favourate.component'
+import { from } from 'rxjs';
+ 
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular7Samples';
+
+  post = {
+    title:"Title1",
+    isFavourite:true
+  }
+
+
+  onFavouriteChanged(eventArgs:FavouriteChangedEventArgs ){
+    alert("onFavouriteChanged - " + eventArgs.newValue);
+  }
 }

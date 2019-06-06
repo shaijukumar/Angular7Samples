@@ -1,0 +1,12 @@
+<form (ngSubmit)="onSubmit(form1)" #form1="ngForm">
+
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <!--input required ngModel name="firstName" id="firstName" #firstName type="text" class="form-control" (change)="onfirstNameChange()"-->   
+        <input type="text" name="firstName" id="" [(ngModel)]="user.firstName" required #firstName="ngModel">  
+        <div class="alert alert-danger" *ngIf="firstName.invalid  && (firstName.dirty || firstName.touched )" >Invalid First Name</div>
+    </div>  
+
+  
+  <input type="submit" value="Submit" name="submit" [disabled]="form1.invalid">
+</form>

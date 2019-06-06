@@ -7,12 +7,18 @@ import { DataEventsComponent } from './data-events/data-events.component';
 
 import { FormsModule } from'@angular/forms';
 import { SummaryPipe } from './summary.pipes';
+import { FavourateComponent } from './favourate/favourate.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
     SummaryPipe,
     AppComponent,
-    DataEventsComponent
+    DataEventsComponent,
+    FavourateComponent,
+    DirectivesComponent,
+    ContactFormComponent
   ],
   imports: [    
     BrowserModule,

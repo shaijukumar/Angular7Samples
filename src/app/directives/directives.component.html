@@ -1,0 +1,26 @@
+<button (click)="condition=!condition"  [ngClass]="{ 'btn-success': condition, 'btn-danger' : !condition }" >Click</button>
+
+<div *ngIf="condition; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock>Content to render when condition is true.</ng-template>
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+<div [hidden]="condition">condition</div>
+<div [hidden]="!condition">not condition</div>
+
+<input type="text" [(ngModel)]="person">{{person}}
+
+<ul [ngSwitch]="person">
+    <li *ngSwitchCase="'Mohan'">Hello Mohan</li>
+    <li *ngSwitchCase="'Sohan'">Hello Sohan</li>
+    <li *ngSwitchCase="'Vijay'">Hello Vijay</li>
+    <li *ngSwitchDefault>Bye Bye</li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let course of courses; index as i;even as isEven">
+        {{isEven}}.{{i}}. {{course.name}}      
+    </li>
+  </ul>
+
+  <h3>Safe Traversal Directive task?.item.id</h3>
+<span>{{task?.item.id}}</span>
